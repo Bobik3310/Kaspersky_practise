@@ -13,10 +13,8 @@ for quote in quotes:
         words.append(quote.text.lower())
     else:
         pass
-with open('words.txt', 'w') as f1, open('words.txt', 'r') as f2:
-    if f2.read() == '':
+with open('words.txt', 'w+') as f1:
+    if f1.read() == '':
         for i in words:
             if i != '':
                 f1.write(i + '\n')
-    else:
-        pass
