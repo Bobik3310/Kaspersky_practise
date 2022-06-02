@@ -1,1 +1,4 @@
-print(*['qwertyuiopasdfghjklzxcvbnm_{}1234567890'[('qwertyuiopasdfghjklzxcvbnm_{}1234567890'.index(i) + 2 + 'qwertyuiopasdfghjklzxcvbnm_{}1234567890'.index('thekey'[count % len('thekey')])) % len('qwertyuiopasdfghjklzxcvbnm_{}1234567890')] for count, i in enumerate(list('yourflagis{fhke37_kdrjknbmpr_04374j}'), start=0)], sep='')
+alph = 'qwertyuiopasdfghjklzxcvbnm_{}1234567890'
+text = list('yourflagis{fhke37_kdrjknbmpr_04374j}')
+gamma = 'thekey'
+print(*[alph[(alph.index(i) + 2 + alph.index(gamma[count % len(gamma)])) % len(alph)] for count, i in enumerate(text, start=0)], sep='')
