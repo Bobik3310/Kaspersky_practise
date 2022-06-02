@@ -1,3 +1,4 @@
+import parsing
 with open('shifr.txt', 'rt') as f1, open('words.txt', 'rt') as f2:
     shifr = f1.read()
     words = f2.read()
@@ -47,7 +48,7 @@ for i in shifr_list[:]:
     keys.append(ces(i)[1])
 n = 0
 for i in shifr:
-    if alph_big.count(i) == 1 or alph_small.count(i) == 1:  # Расскажи Четверову про случай
+    if alph_big.count(i) == 1 or alph_small.count(i) == 1:
         new_text += text[n]
         n += 1
     else:

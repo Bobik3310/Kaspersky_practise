@@ -1,7 +1,1 @@
-alph = 'qwertyuiopasdfghjklzxcvbnm_{}1234567890'
-text = list('yourflagis{fhke37_kdrjknbmpr_04374j}')
-gamma = 'thekey'
-for count, i in enumerate(text, start=0):
-    text[count] = alph[(alph.index(i) + alph.index(gamma[count % len(gamma)])) % len(alph)]
-print(*text, sep='')
-# Спроси у Четверга
+print(*['qwertyuiopasdfghjklzxcvbnm_{}1234567890'[('qwertyuiopasdfghjklzxcvbnm_{}1234567890'.index(i) + 2 + 'qwertyuiopasdfghjklzxcvbnm_{}1234567890'.index('thekey'[count % len('thekey')])) % len('qwertyuiopasdfghjklzxcvbnm_{}1234567890')] for count, i in enumerate(list('yourflagis{fhke37_kdrjknbmpr_04374j}'), start=0)], sep='')
