@@ -9,7 +9,7 @@ soup = BeautifulSoup(response.text, 'lxml')
 quotes = soup.find_all('a', target='_blank')
 
 for quote in quotes:
-    if 'fianc' not in quote.text and 'Foxinet' not in quote.text:
+    if 'Foxinet' not in quote.text:
         words.append(quote.text.lower())
     else:
         pass
@@ -17,4 +17,7 @@ with open('words.txt', 'w+') as f1:
     if f1.read() == '':
         for i in words:
             if i != '':
-                f1.write(i + '\n')
+                try:
+                    f1.write(i + '\n')
+                except UnicodeEncodeError:
+                    pass
